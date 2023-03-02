@@ -4,6 +4,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id]) || "No User found with id #{params[:id]}"
   end
 end

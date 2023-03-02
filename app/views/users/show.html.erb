@@ -1,2 +1,25 @@
-<h1>Here is a single user</h1>
-<p><%= @user.name %></p>
+<div class="user">
+  <img src=<%= @user.photo %> alt="image avatar" class="user__img">
+  <div class="user__detail">
+    <h2 class="user__title"><%= @user.name %></h2>
+    <p class="user__number">Number of posts: <%= @user.postsCounter || 0 %></p>
+  </div>
+</div>
+
+<div class="bio">
+  <h3>Bio</h3>
+  <p><%= @user.bio %> </p>
+</div>
+
+<div class="posts__container">
+  <% @user.recent_posts.each do |post| %>
+    <div class="post">
+      <h3 class="post__title"> Post #<%= post.id %></h3>
+      <p class="post__content"><%= post.text %></p>
+      <span class="post__stats"> Comments: <%= post.commentsCounter || 0 %>, Likes: <%= post.likesCounter || 0%></span>
+    </div>
+  <% end %>
+</div>
+<div class="posts__all">
+  <a href=<%= "#{@user.id}/posts" %> class="posts__btn">See all posts</a>
+</div>

@@ -20,7 +20,7 @@
         <p> No comments found </p>
       <% end %>
       <!-- Loop through comments if found -->
-      <% post.comments.each do |comment| %>
+      <% post.recent_comments.each do |comment| %>
         <div class="comment">
           <p><%= comment.author.name %>: <%= comment.text %></p>
         </div>

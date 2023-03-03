@@ -5,77 +5,82 @@
   box-sizing: border-box;
 }
 
-/****************\
+/****************  \
     Users Page
-\****************/
- .users__container, 
- .posts__container {
+\  ****************/
+.users__container,
+.posts__container {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
   margin-top: 16px;
- }
+}
 
- a {
+a {
   text-decoration: none;
   color: inherit;
- }
+}
 
- .user {
+.user {
   display: flex;
   max-width: 1200px;
   width: 80%;
   margin: 0 auto;
   column-gap: 20px;
- }
+}
 
- .user__img {
+.user__img {
   width: 200px;
   height: 140px;
   border-radius: 10px;
- }
+}
 
- .user__detail {
+.user__detail {
   border: 3px solid #000;
   width: 100%;
   padding: 0 16px;
- }
+}
 
- .user__title {
+.user__title {
   font-size: 30px;
- }
+}
 
- .user__number {
+.user__number {
   text-align: end;
- }
+}
 
- /* User Detail */
- .bio, .post, .comments__container {
-    width: 80%;
-    max-width: 1200px;
-    border: 3px solid #000;
-    margin: 0 auto;
-    padding: 16px;
- }
+/* User Detail */
+.bio,
+.post,
+.comments__container {
+  width: 80%;
+  max-width: 1200px;
+  border: 3px solid #000;
+  margin: 0 auto;
+  padding: 16px;
+}
 
- .bio h3 {
+.bio h3 {
   font-size: 20px;
- }
+}
 
- .post__stats {
+.post__stats {
   text-align: end;
   display: block;
- }
+}
 
- .posts__all {
+.posts__all {
   display: flex;
   justify-content: center;
- }
+}
 
- .posts__btn {
+.posts__btn {
   border: 1px solid #000;
   padding: 16px;
   cursor: pointer;
- }
+}
 
- 
+.post__info {
+  display: flex;
+  justify-content: space-between;
+}

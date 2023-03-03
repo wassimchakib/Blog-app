@@ -1,1 +1,13 @@
-<h1>Here is a list of users</h1>
+<div class="users__container">
+  <% @users.each do |user| %>
+    <a href=<%= "/users/#{user.id}" %> class="user__redirect">
+      <div class="user">
+        <img src=<%= user.photo %> alt="image avatar" class="user__img">
+        <div class="user__detail">
+          <h2 class="user__title"><%= user.name %></h2>
+          <p class="user__number">Number of posts: <%= user.postsCounter || 0 %></p>
+        </div>
+      </div>
+    </a>
+  <% end %>
+</div>

@@ -14,4 +14,14 @@
       <p><%= comment.author.name %>: <%= comment.text %></p>
     </div>
   <% end %>
+  <div class="post__manipulation">
+    <!-- Like Post -->
+    <%= form_with model: @like, url: "/users/#{@post.author.id}/posts/#{@post.id}/likes", method: :post, local: true do |f| %>
+      <%= f.submit "Add Like" %>
+    <% end %>
+    <!-- Add a comment to the post -->
+    <button>
+      <%= link_to "Add New Comment", "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" %>
+    </button>
+  </div>
 </div>

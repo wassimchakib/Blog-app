@@ -84,3 +84,34 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
+.post__manipulation {
+  display: flex;
+  justify-content: space-between;
+}
+
+.post__manipulation button,
+.post__manipulation form input {
+  padding: 16px;
+  cursor: pointer;
+}
+
+.comment__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment__form form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border: 3px solid #000;
+  padding: 16px;
+  margin-top: 16px;
+  width: 50%;
+}
+
+.comment__form form input {
+  padding: 16px;
+}

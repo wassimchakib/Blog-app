@@ -8,8 +8,6 @@ RSpec.describe Post, type: :model do
              commentsCounter: 0, likesCounter: 0)
   end
 
-  before { subject.save }
-
   it 'title should be present' do
     subject.title = nil
     expect(subject).to_not be_valid

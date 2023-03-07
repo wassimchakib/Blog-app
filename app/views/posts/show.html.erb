@@ -1,27 +1,29 @@
-<div class="post">
-  <h3 class="post__title post__info"> Post #<%= @post.id %> by <%= @post.author.name %>
-  <span class="post__stats post__data"> Comments: <%= @post.commentsCounter || 0 %>, Likes: <%= @post.likesCounter || 0%></span>
-  </h3>
-  <p class="post__content"><%= @post.text %></p>
+<% unless @post.nil? %>
+  <div class="post">
+    <h3 class="post__title post__info"> Post #<%= @post.id %> by <%= @post.author.name %>
+    <span class="post__stats post__data"> Comments: <%= @post.commentsCounter || 0 %>, Likes: <%= @post.likesCounter || 0%></span>
+    </h3>
+    <p class="post__content"><%= @post.text %></p>
 
-  <!-- If there are no comments, print No comments found -->
-  <% if @post.comments.empty? %>
-    <p> No comments found </p>
-  <% end %>
-  <!-- Loop through comments if found -->
-  <% @post.comments.each do |comment| %>
-    <div class="comment">
-      <p><%= comment.author.name %>: <%= comment.text %></p>
-    </div>
-  <% end %>
-  <div class="post__manipulation">
-    <!-- Like Post -->
-    <%= form_with model: @like, url: "/users/#{@post.author.id}/posts/#{@post.id}/likes", method: :post, local: true do |f| %>
-      <%= f.submit "Add Like" %>
+    <!-- If there are no comments, print No comments found -->
+    <% if @post.comments.empty? %>
+      <p> No comments found </p>
     <% end %>
-    <!-- Add a comment to the post -->
-    <button>
-      <%= link_to "Add New Comment", "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" %>
-    </button>
+    <!-- Loop through comments if found -->
+    <% @post.comments.each do |comment| %>
+      <div class="comment">
+        <p><%= comment.author.name %>: <%= comment.text %></p>
+      </div>
+    <% end %>
+    <div class="post__manipulation">
+      <!-- Like Post -->
+      <%= form_with model: @like, url: "/users/#{@post.author.id}/posts/#{@post.id}/likes", method: :post, local: true do |f| %>
+        <%= f.submit "Add Like" %>
+      <% end %>
+      <!-- Add a comment to the post -->
+      <button>
+        <%= link_to "Add New Comment", "/users/#{@post.author.id}/posts/#{@post.id}/comments/new" %>
+      </button>
+    </div>
   </div>
-</div>
+<% end %>

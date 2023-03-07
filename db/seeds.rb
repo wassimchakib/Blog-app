@@ -1,20 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+## If you are using the app for the first time,
+# you can use the commands below to setup test database to have the data below
+# RAILS_ENV=test rails db:drop
+# RAILS_ENV=test rails db:create
+# RAILS_ENV=test rails db:schema:load
+# RAILS_ENV=test rails db:seed
 
-user = User.create(name: 'Yonas', photo: 'https://avatars.githubusercontent.com/u/72081991?v=4', bio: 'I am super user', postsCounter: 0)
-user2 = User.create(name: 'Katie', photo: 'https://cdn2.psychologytoday.com/assets/styles/manual_crop_1_91_1_1528x800/public/field_blog_entry_images/2018-09/shutterstock_648907024.jpg?itok=7lrLYx-B', bio: 'Hello, Katie here..', postsCounter: 0)
+# Create 2 users : Wassim and Mert
+wassim = User.create(name: 'Wassim Chakib', photo: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg', bio: "My name is Wassim, I'm a software developer with a passion in Java and React", postsCounter: 0)
+mert = User.create(name: 'Mert Kaya', photo: 'https://cdn-icons-png.flaticon.com/512/5556/5556468.png', bio: 'My name is Mert, Cryptocurrency is my motivation. I dream to create my own coin in web3 market', postsCounter: 0)
 
-post1 = Post.create(author: user, title: "My first post", text: "This is my first post...")
-post2 = Post.create(author: user, title: "My second post", text: "This is my second post...")
-post3 = Post.create(author: user, title: "My third post", text: "This is my third post...")
+# Create 3 posts for User: Wassim
+wassimPost1 = Post.create(author: wassim, title: "How to succeed at software development", text: "Succeed at software development: set goals, practice regularly, collaborate, stay curious, learn from failures, prioritize testing, and keep up with industry trends.")
+wassimPost2 = Post.create(author: wassim, title: "How to learn HTML and CSS", text: "Learn HTML/CSS: start with basics, use online resources, practice, code editors, join online communities, stay up-to-date. Create stunning web pages.")
+wassimPost3 = Post.create(author: wassim, title: "How to learn ruby", text: "Start by learning the basics of Ruby's syntax. Practice writing code, use online resources, and participate in online communities. Consider building web applications with Ruby on Rails. Don't be afraid to ask for help. With persistence and dedication, you can become proficient in Ruby.")
 
-post4 = Post.create(author: user2, title: "My first post", text: "This is my first post...")
-post5 = Post.create(author: user2, title: "My second post", text: "This is my second post...")
-post6 = Post.create(author: user2, title: "My third post", text: "This is my third post...")
+# Create 1 post for User: Mert
+mertPost1 = Post.create(author: mert, title: "How to learn solidity", text: "Learn Solidity: start with basics, read documentation, practice writing code, use online resources, join online communities, and participate in hackathons.")
 
-comment1 = Comment.create(author: user2, post: post1, text: 'Hi Yonas, thanks for sharing!')
+# Generate 1 comment for User: Mert
+mertcomment1 = Comment.create(author: mert, post: wassimPost1, text: "Thank you for publishing this informative blog post. It provided me with valuable insights and tips on how to succeed as a software developer. Keep up the good work!")

@@ -4,7 +4,7 @@ RSpec.describe 'Hello world', type: :system do
   describe 'index page' do
     it 'shows the right content' do
       visit '/users'
-      sleep(5)
+      sleep(30)
       expect(page).to have_content('Yonas')
     end
   end

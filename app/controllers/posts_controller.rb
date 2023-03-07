@@ -5,10 +5,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @post.commentsCounter = 0
+    @post.likesCounter = 0
 
     if @post.save
-      redirect_to users_path
+      flash[:success] = 'Post saved successfully'
+      redirect_to user_posts_path(params[:user_id])
     else
+      flash[:error] = "Invalid input, post didn't get saved"
       render :new
     end
   end

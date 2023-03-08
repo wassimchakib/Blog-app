@@ -1,33 +1,36 @@
-<div class="user">
-  <img src=<%= @posts[0].author.photo %> alt="image avatar" class="user__img">
-  <div class="user__detail">
-    <h2 class="user__title"><%= @posts[0].author.name %></h2>
-    <p class="user__number">Number of posts: <%= @posts[0].author.postsCounter || 0 %></p>
-  </div>
-</div>
-<div class="posts__container">
-  <% @posts.each do |post| %>
-    <a href=<%= "posts/#{post.id}" %>>
-      <div class="post">
-        <h3 class="post__title"> Post #<%= post.id %></h3>
-        <p class="post__content"><%= post.text %></p>
-        <span class="post__stats"> Comments: <%= post.commentsCounter || 0 %>, Likes: <%= post.likesCounter || 0%></span>
-      </div>
-    </a>
-    <div class="comments__container">
-      <!-- If there are no comments, print No comments found -->
-      <% if post.comments.empty? %>
-        <p> No comments found </p>
-      <% end %>
-      <!-- Loop through comments if found -->
-      <% post.recent_comments.each do |comment| %>
-        <div class="comment">
-          <p><%= comment.author.name %>: <%= comment.text %></p>
-        </div>
-      <% end %>
+<% unless @posts.empty?%>
+  <div class="user">
+    <img src=<%= @posts[0].author.photo %> alt="image avatar" class="user__img">
+    <div class="user__detail">
+      <h2 class="user__title"><%= @posts[0].author.name %></h2>
+      <p class="user__number">Number of posts: <%= @posts[0].author.postsCounter || 0 %></p>
     </div>
-  <% end %>
-  <button>
-    <%= link_to "New Post", new_user_post_path %>
-  </button>
-</div>
+  </div>
+  <div class="posts__container">
+    <% @posts.each do |post| %>
+      <a href=<%= "posts/#{post.id}" %>>
+        <div class="post">
+          <h3 class="post__title"> Post #<%= post.id %></h3>
+          <p class="post__content"><%= post.text %></p>
+          <span class="post__stats"> Comments: <%= post.commentsCounter || 0 %>, Likes: <%= post.likesCounter || 0%></span>
+        </div>
+      </a>
+      <div class="comments__container">
+        <!-- If there are no comments, print No comments found -->
+        <% if post.comments.empty? %>
+          <p> No comments found </p>
+        <% end %>
+        <!-- Loop through comments if found -->
+        <% post.recent_comments.each do |comment| %>
+          <div class="comment">
+            <p><%= comment.author.name %>: <%= comment.text %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <button>
+      <%= link_to "New Post", new_user_post_path %>
+    </button>
+  </div>
+<% end %>
+<div class="pagination">Pagination</div>

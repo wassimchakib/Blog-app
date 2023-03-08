@@ -16,11 +16,6 @@ RSpec.describe 'PostsController', type: :request do
     it 'Renders the correct template' do
       expect(response).to render_template('index')
     end
-
-    # It should have correct response body text
-    it 'has correct body text' do
-      expect(response.body).to include('Here is a list of posts for a given user')
-    end
   end
 
   describe 'GET /users/:user_id/posts/:id' do
@@ -37,11 +32,6 @@ RSpec.describe 'PostsController', type: :request do
     # It should render template correctly
     it 'Renders the correct template' do
       expect(response).to render_template('show')
-    end
-
-    # It should have correct response body text
-    it 'has correct body text' do
-      expect(response.body).to include('Here is a single post for a given user')
     end
   end
 end

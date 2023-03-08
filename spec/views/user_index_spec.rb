@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Post', type: :system do
+RSpec.describe 'User', type: :system do
   describe 'index page' do
     it 'shows the username of all users' do
       visit users_path
@@ -23,6 +23,7 @@ RSpec.describe 'Post', type: :system do
       visit users_path
       click_link 'Wassim'
       expect(page).to have_content('Bio')
+      expect(page).to have_current_path('/users/1')
     end
   end
 end

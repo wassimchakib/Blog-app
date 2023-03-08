@@ -14,11 +14,13 @@
 
   <div class="posts__container">
     <% @user.recent_posts.each do |post| %>
-      <div class="post">
-        <h3 class="post__title"> Post #<%= post.id %></h3>
-        <p class="post__content"><%= post.text %></p>
-        <span class="post__stats"> Comments: <%= post.commentsCounter || 0 %>, Likes: <%= post.likesCounter || 0%></span>
-      </div>
+      <a href=<%= "#{@user.id}/posts/#{post.id}" %>>
+        <div class="post">
+          <h3 class="post__title"> Post #<%= post.id %></h3>
+          <p class="post__content"><%= post.text %></p>
+          <span class="post__stats"> Comments: <%= post.commentsCounter || 0 %>, Likes: <%= post.likesCounter || 0%></span>
+        </div>
+      </a>
     <% end %>
   </div>
   <div class="posts__all">

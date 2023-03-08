@@ -98,8 +98,8 @@ NB: You need to create an `env` file for your database credentials
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/wassimchakib/)
 
 👤 **Mert Kaya**
-- GitHub: [@mkaya13](https://github.com/githubhandle)
-- Twitter: [@mkaya133](https://twitter.com/twitterhandle)
+- GitHub: [@mkaya13](https://github.com/mkaya13)
+- Twitter: [@mkaya133](https://twitter.com/mkaya133)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mert-kaya-0732b717b/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

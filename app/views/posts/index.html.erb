@@ -13,6 +13,14 @@
           <h3 class="post__title"> Post #<%= post.id %></h3>
           <p class="post__content"><%= post.text %></p>
           <span class="post__stats"> Comments: <%= post.commentsCounter || 0 %>, Likes: <%= post.likesCounter || 0%></span>
+          <!-- Delete each post -->
+          <% if can? :destroy, post %>
+            <%= link_to "Delete", user_post_path(post.author.id, post.id), data: {
+              turbo_method: :delete,
+              turbo_confirm: "Are you sure?"
+            }
+            %>
+          <% end %>
         </div>
       </a>
       <div class="comments__container">

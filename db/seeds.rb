@@ -3,8 +3,8 @@
 # rails db:seed:replant RAILS_ENV=test
 
 # Create 2 users : Wassim and Mert
-wassim = User.find_or_create_by(name: 'Wassim Chakib', photo: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg', bio: "My name is Wassim, I'm a software developer with a passion in Java and React", postsCounter: 0)
-mert = User.find_or_create_by(name: 'Mert Kaya', photo: 'https://cdn-icons-png.flaticon.com/512/5556/5556468.png', bio: 'My name is Mert, Cryptocurrency is my motivation. I dream to create my own coin in web3 market', postsCounter: 0)
+wassim = User.create!(name: 'Wassim Chakib', photo: 'https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg', bio: "My name is Wassim, I'm a software developer with a passion in Java and React", postsCounter: 0, email: "wassim@gmail.com", password: "A12@bcszer")
+mert = User.create!(name: 'Mert Kaya', photo: 'https://cdn-icons-png.flaticon.com/512/5556/5556468.png', bio: 'My name is Mert, Cryptocurrency is my motivation. I dream to create my own coin in web3 market', postsCounter: 0, email: "mert@gmail.com", password: "B7/2@fnbb")
 
 # Create 3 posts for User: Wassim
 wassimPost1 = Post.find_or_create_by(author: wassim, title: "How to succeed at software development", text: "Succeed at software development: set goals, practice regularly, collaborate, stay curious, learn from failures, prioritize testing.", commentsCounter: 0, likesCounter:0)

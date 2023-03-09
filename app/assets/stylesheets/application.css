@@ -85,6 +85,11 @@ a {
   justify-content: space-between;
 }
 
+.actions input {
+  width: 100%;
+  padding: 8px;
+}
+
 .post__manipulation {
   display: flex;
   justify-content: space-between;
@@ -134,11 +139,6 @@ a {
 
 .field input[type="email"],
 .field input[type="password"] {
-  width: 100%;
-  padding: 8px;
-}
-
-.actions input {
   width: 100%;
   padding: 8px;
 }

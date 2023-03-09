@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
@@ -9,8 +7,9 @@ class Ability
 
     can :read, :all
     can %i[create update destroy], Post, user_id: user.id
+    can %i[create update destroy], Comment, user_id: user.id
 
-    return unless user.admin?
+    return unless user.is? :admin
 
     can :manage, :all
     #

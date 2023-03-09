@@ -98,6 +98,7 @@ NB: You need to create an `env` file for your database credentials
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/wassimchakib/)
 
 👤 **Mert Kaya**
+
 - GitHub: [@mkaya13](https://github.com/mkaya13)
 - Twitter: [@mkaya133](https://twitter.com/mkaya133)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mert-kaya-0732b717b/)
@@ -108,7 +109,8 @@ NB: You need to create an `env` file for your database credentials
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **Delete Post**
+- **API endpoints for Users, Posts, Comments and Likes**
+- **Mobile Application Improvement**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

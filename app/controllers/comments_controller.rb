@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @comment = Comment.new
   end
@@ -14,9 +16,15 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment.destroy
+    flash[:success] = 'The comment was deleted successfully'
+    redirect_to user_post_path(current_user.id)
+  end
+
   private
 
   def comment_params
-    params.require(:comment).permit(:text, :post_id)
+    params.require(:comment).permit(:text)
   end
 end

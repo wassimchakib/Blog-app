@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def new
     @post = Post.new
   end
@@ -23,6 +25,12 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by(author_id: params[:user_id], id: params[:id])
+  end
+
+  def destroy
+    @post.destroy
+    flash[:success] = 'Post was deleted successfully'
+    redirect_to user_posts_path(current_user.id)
   end
 
   private

@@ -8,6 +8,8 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'devise'
 
 gem 'rswag'
+gem 'rswag-api'
+gem 'rswag-ui'
 
 # CanCanCan
 gem 'cancancan'

@@ -1,4 +1,16 @@
 class Api::LikesController < ApplicationController
+  include Rswag::Api::Controller
+
+  swagger_controller :likes, 'Like Management'
+
+  swagger_api :index do
+    summary 'Fetches all like items'
+    notes 'This lists all the like items'
+    response :ok, 'Success', :json
+    response :unauthorized
+    response :unprocessable_entity
+  end
+
   def index
     @likes = Like.where(post_id: post.id)
     render json: @likes

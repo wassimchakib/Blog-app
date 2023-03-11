@@ -1,4 +1,14 @@
 class Api::CommentsController < ApplicationController
+  include Rswag::Api::Controller
+  swagger_controller :comments, 'Comment Management'
+
+  swagger_api :index do
+    summary 'Fetches all Comment items'
+    notes 'This lists all the comment items'
+    response :ok, 'Success', :json
+    response :unauthorized
+    response :unprocessable_entity
+  end
   def index
     @comments = Comment.where(post_id: post.id)
     render json: @comments

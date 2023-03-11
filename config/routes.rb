@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     end
   end
 
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
+
   ## API
   namespace :api do
     resources :users, only: [:index, :create, :update, :destroy, :show] do

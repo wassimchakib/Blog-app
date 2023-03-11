@@ -1,4 +1,16 @@
 class Api::UsersController < ApplicationController
+  include Rswag::Api::Controller
+
+  swagger_controller :users, 'User Management'
+
+  swagger_api :index do
+    summary 'Fetches all User items'
+    notes 'This lists all the User items'
+    response :ok, 'Success', :json
+    response :unauthorized
+    response :unprocessable_entity
+  end
+
   def index
     @users = User.all.select('name, id, bio, email')
     render json: @users

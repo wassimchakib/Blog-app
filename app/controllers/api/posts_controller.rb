@@ -1,4 +1,15 @@
 class Api::PostsController < ApplicationController
+  include Rswag::Api::Controller
+
+  swagger_controller :posts, 'Post Management'
+
+  swagger_api :index do
+    summary 'Fetches all post items'
+    notes 'This lists all the post items'
+    response :ok, 'Success', :json
+    response :unauthorized
+    response :unprocessable_entity
+  end
   def index
     @posts = Post.where(author_id: user.id)
     render json: @posts

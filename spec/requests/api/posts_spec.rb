@@ -57,38 +57,6 @@ RSpec.describe 'api/posts', type: :request do
       end
     end
 
-    patch('update post') do
-      response(200, 'successful') do
-        let(:user_id) { '123' }
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-
-    put('update post') do
-      response(200, 'successful') do
-        let(:user_id) { '123' }
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
-        run_test!
-      end
-    end
-
     delete('delete post') do
       response(200, 'successful') do
         let(:user_id) { '123' }
